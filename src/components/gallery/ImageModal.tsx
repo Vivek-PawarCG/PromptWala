@@ -101,7 +101,7 @@ export default function ImageModal({ image, isOpen, onClose }: ImageModalProps) 
                     className="flex items-center text-gray-500 hover:text-gray-800"
                   >
                     <Copy className="h-4 w-4 mr-2" />
-                    Copy 
+                    Copy Prompt 
                   </Button>
                 )}
               </div>
