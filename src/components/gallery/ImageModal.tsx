@@ -69,15 +69,15 @@ export default function ImageModal({ image, isOpen, onClose }: ImageModalProps) 
       <DialogContent className="max-w-6xl h-[90vh] p-0 flex flex-col bg-white">
         <div className="flex flex-col lg:flex-row flex-1 min-h-0">
           {/* Image Section */}
-          <div className="flex-1 bg-black flex items-center justify-center relative">
-            {/* <Button
+          <div className="h-3/5 lg:h-full lg:flex-1 bg-black flex items-center justify-center relative">
+            <Button
               variant="ghost"
               size="sm"
               className="absolute top-4 right-4 z-10 text-white hover:bg-white/20"
               onClick={onClose}
             >
               <X className="h-4 w-4" />
-            </Button> */}
+            </Button>
             <img
               src={image.image_url}
               alt={image.title}
@@ -86,7 +86,7 @@ export default function ImageModal({ image, isOpen, onClose }: ImageModalProps) 
           </div>
 
           {/* Details Section */}
-          <div className="w-full lg:w-96 p-6 flex flex-col bg-white overflow-hidden">
+          <div className="w-full lg:w-96 p-6 flex flex-col bg-white overflow-hidden h-2/5 lg:h-full">
             <div className="flex-1 overflow-y-auto">
               {/* Category Badge & Copy Button */}
               <div className="mb-4 flex items-center justify-between">

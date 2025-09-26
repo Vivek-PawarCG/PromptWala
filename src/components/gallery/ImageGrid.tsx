@@ -2,8 +2,8 @@ import ImageCard from "./ImageCard";
 import ImageModal from "./ImageModal";
 import { useState } from "react";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Filter, Grid3X3 } from "lucide-react";
-import { useImages } from "@/hooks/useImages";
+import { Button } from "@/components/ui/button";
+import { Filter, Grid3X3, RefreshCw } from "lucide-react";
 import { LoadingSpinner } from "@/components/ui/loading-spinner";
 
 interface Image {
@@ -18,13 +18,22 @@ interface Image {
 }
 
 interface ImageGridProps {
+  images: Image[];
+  loading: boolean;
+  error: string | null;
+  refetch: () => void;
+  incrementViews: (id: string) => void;
   onImageClick?: (image: Image) => void;
 }
 
 export default function ImageGrid({ 
+  images,
+  loading,
+  error,
+  refetch,
+  incrementViews,
   onImageClick = () => {} 
 }: ImageGridProps) {
-  const { images, loading, error, incrementViews } = useImages();
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [sortBy, setSortBy] = useState<string>("recent");
   const [selectedImage, setSelectedImage] = useState<Image | null>(null);
@@ -127,6 +136,11 @@ export default function ImageGrid({
                     <SelectItem value="popular">Most Popular</SelectItem>
                   </SelectContent>
                 </Select>
+
+                <Button variant="outline" size="sm" onClick={refetch}>
+                  <RefreshCw className="h-4 w-4 mr-2" />
+                  Refresh
+                </Button>
               </div>
             </div>
           </div>

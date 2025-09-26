@@ -9,7 +9,14 @@ import { useToast } from "@/components/ui/use-toast";
 
 export default function Home() {
   const [isUploadOpen, setIsUploadOpen] = useState(false);
-  const { uploadImage } = useImages();
+  const { 
+    images,
+    loading,
+    error,
+    uploadImage,
+    refetch,
+    incrementViews
+  } = useImages();
   const { toast } = useToast();
 
   const handleUploadSubmit = async (data: any) => {
@@ -26,6 +33,7 @@ export default function Home() {
       });
       
       setIsUploadOpen(false);
+      refetch(); // Refetch images after successful upload
     } catch (error) {
       toast({
         title: "Upload failed",
@@ -66,7 +74,13 @@ export default function Home() {
 
       {/* Gallery */}
       <main>
-        <ImageGrid />
+        <ImageGrid 
+          images={images}
+          loading={loading}
+          error={error}
+          refetch={refetch}
+          incrementViews={incrementViews}
+        />
       </main>
     </div>
   );

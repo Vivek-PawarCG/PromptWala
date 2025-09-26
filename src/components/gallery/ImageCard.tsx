@@ -43,11 +43,11 @@ export default function ImageCard({
       className="group cursor-pointer hover:shadow-lg transition-all duration-300 overflow-hidden border-0 bg-white"
       onClick={onClick}
     >
-      <div className="relative overflow-hidden">
+      <div className="relative overflow-hidden aspect-square bg-gray-100/50"> 
         <img
           src={imageUrl}
           alt={title}
-          className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+          className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
         />
         <div className="absolute top-2 left-2">
           <Badge
