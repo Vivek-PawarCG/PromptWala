@@ -43,11 +43,11 @@ export default function ImageCard({
       className="group cursor-pointer hover:shadow-lg transition-all duration-300 overflow-hidden border-0 bg-white"
       onClick={onClick}
     >
-      <div className="relative overflow-hidden aspect-square bg-gray-100/50"> 
+      <div className="relative overflow-hidden aspect-square bg-gray-100/50">
         <img
           src={imageUrl}
           alt={title}
-          className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
+          className="w-full h-auto group-hover:scale-105 transition-transform duration-300"
         />
         <div className="absolute top-2 left-2">
           <Badge
@@ -62,7 +62,6 @@ export default function ImageCard({
         <h3 className="font-semibold text-lg mb-2 text-gray-900 group-hover:text-purple-600 transition-colors">
           {title}
         </h3>
-        <p className="text-gray-600 text-sm mb-3 line-clamp-2">{description}</p>
         <div className="flex items-center justify-between text-sm text-gray-500">
           <div className="flex items-center space-x-3">
             <div className="flex items-center space-x-1">
@@ -74,7 +73,6 @@ export default function ImageCard({
               <span>{views}</span>
             </div>
           </div>
-          <span className="text-xs text-gray-400">2 hours ago</span>
         </div>
       </CardContent>
     </Card>
