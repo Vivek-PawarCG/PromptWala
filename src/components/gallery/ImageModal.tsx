@@ -114,7 +114,7 @@ export default function ImageModal({ image, isOpen, onClose }: ImageModalProps) 
               {/* Description */}
               {image.description && (
                 <div className="mb-6">
-                  <h3 className="text-sm font-medium text-gray-700 mb-2">Description</h3>
+                  <h3 className="text-sm font-medium text-gray-700 mb-2">Image Prompt</h3>
                   <p className="text-gray-600 leading-relaxed">
                     {image.description}
                   </p>
