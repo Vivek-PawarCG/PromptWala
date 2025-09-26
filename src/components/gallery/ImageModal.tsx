@@ -70,14 +70,14 @@ export default function ImageModal({ image, isOpen, onClose }: ImageModalProps) 
         <div className="flex flex-col lg:flex-row flex-1 min-h-0">
           {/* Image Section */}
           <div className="h-3/5 lg:h-full lg:flex-1 bg-black flex items-center justify-center relative">
-            <Button
+            {/* <Button
               variant="ghost"
               size="sm"
               className="absolute top-4 right-4 z-10 text-white hover:bg-white/20"
               onClick={onClose}
             >
               <X className="h-4 w-4" />
-            </Button>
+            </Button> */}
             <img
               src={image.image_url}
               alt={image.title}
